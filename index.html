@@ -1,16 +1,171 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Rigved Patki</title>
-    <meta charset="utf-8">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rigvedpatki.dev – Parking Page</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 10%; }
-        h1 { font-size: 2.5rem; }
-        p { font-size: 1.2rem; color: #555; }
+      /* --- Reset --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #0d1117; /* GitHub dark / terminal black */
+        font-family: "Fira Code", monospace;
+        color: #c9d1d9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 1rem;
+      }
+
+      /* --- Terminal Container --- */
+      .terminal {
+        background: #000;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+        width: 90%;
+        max-width: 700px;
+        padding: 20px;
+        position: relative;
+      }
+
+      /* --- Terminal Header (like macOS traffic lights) --- */
+      .terminal-header {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 15px;
+      }
+
+      .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .red {
+        background-color: #ff5f56;
+      }
+      .yellow {
+        background-color: #ffbd2e;
+      }
+      .green {
+        background-color: #27c93f;
+      }
+
+      /* --- Prompt Styling (Powerlevel10k inspired) --- */
+      .prompt {
+        display: flex;
+        align-items: center;
+        white-space: pre;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .user {
+        color: #33ff66; /* Green user */
+      }
+
+      .at {
+        color: #999;
+      }
+
+      .host {
+        color: #61afef; /* Blue host */
+      }
+
+      .dir {
+        color: #e5c07b; /* Yellow directory */
+      }
+
+      .git-branch {
+        color: #d55fde; /* Magenta branch name */
+      }
+
+      /* --- Typing animation --- */
+      .typing {
+        overflow: hidden;
+        border-right: 2px solid #33ff66;
+        white-space: nowrap;
+        animation: typing 3s steps(40, end), blink 0.8s infinite;
+        font-size: 1rem;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #33ff66;
+        }
+      }
+
+      /* --- Secondary Message --- */
+      .message {
+        margin-top: 15px;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+        animation-delay: 3.5s;
+        color: #aaa;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
     </style>
-</head>
-<body>
-    <h1>🚧 Rigved Patki</h1>
-    <p>This domain is reserved for my personal website. Stay tuned!</p>
-</body>
+  </head>
+  <body>
+    <div class="terminal">
+      <!-- Fake terminal header -->
+      <div class="terminal-header">
+        <span class="circle red"></span>
+        <span class="circle yellow"></span>
+        <span class="circle green"></span>
+      </div>
+
+      <!-- Prompt line -->
+      <div class="prompt">
+        <span class="user">rigved</span><span class="at">@</span
+        ><span class="host">rigvedpatki.dev</span>
+        <span class="dir">~/site</span>
+        <span>:<span class="git-branch"> main</span>$</span>
+      </div>
+
+      <!-- Typing animation -->
+      <div class="typing">
+        echo "🚧 This domain is parked. Building something awesome..."
+      </div>
+
+      <!-- Secondary line appears after typing -->
+      <div class="message">
+        <span class="prompt">
+          <span class="user">rigved</span><span class="at">@</span
+          ><span class="host">rigvedpatki.dev</span>
+          <span class="dir">~/site</span>
+          <span>$</span>
+        </span>
+        ls -la<br />
+        total 0<br />
+        drwxr-xr-x 2 rigved staff 64 Sep 18 2025<br />
+        -rw-r--r-- 1 rigved staff 0 🚀 coming-soon.txt
+      </div>
+    </div>
+  </body>
 </html>
