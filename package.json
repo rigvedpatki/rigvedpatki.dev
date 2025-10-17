@@ -10,7 +10,13 @@
     "lint:fix": "ng lint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "format:lint": "pnpm run format && pnpm run lint:fix"
+    "format:lint": "pnpm run format && pnpm run lint:fix",
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "private": true,
   "dependencies": {
@@ -30,6 +36,8 @@
     "@angular/compiler-cli": "^20.3.0",
     "@eslint/js": "^9.37.0",
     "angular-eslint": "20.4.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",

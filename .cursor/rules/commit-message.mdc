@@ -1,0 +1,94 @@
+---
+alwaysApply: true
+---
+
+# Rule: Enforce Commitizen Conventions for Commit Messages
+
+## Goal
+
+Ensure all AI-generated commit messages follow the Commitizen format exactly.
+
+## CRITICAL REQUIREMENT
+
+**EVERY generated commit message MUST follow this exact format:**
+`<type>(<scope>): <subject>`
+
+**DO NOT generate commit messages that don't follow this format.**
+
+## Process
+
+1. **Analyze the changes** to determine the appropriate type and scope
+2. **Apply Commitizen format** strictly
+3. **Use lowercase** for type and subject
+4. **Use imperative mood** ("add" not "added" or "adds")
+5. **Keep subject under 50 characters**
+
+## Format Requirements
+
+### Required Structure:
+
+- **Header:** `<type>(<scope>): <subject>`
+- **Type:** REQUIRED - one of the specified types below
+- **Scope:** RECOMMENDED when changes affect specific area
+- **Subject:** REQUIRED - concise description in imperative mood
+
+### Commit Types (REQUIRED):
+
+- `feat`: New feature for the user
+- `fix`: Bug fix for the user
+- `docs`: Documentation changes
+- `style`: Code formatting, missing semicolons, etc; no production code change
+- `refactor`: Refactoring production code
+- `perf`: Performance improvements
+- `test`: Adding tests, refactoring test; no production code change
+- `build`: Changes that affect the build system or external dependencies
+- `ci`: Changes to CI configuration files and scripts
+- `chore`: Other changes that don't modify src or test files
+- `revert`: Reverts a previous commit
+
+### Common Scopes for This Project:
+
+- `config`: Configuration files and project setup
+- `auth`: Authentication features
+- `ui`: UI components
+- `api`: API-related changes
+- `components`: Angular components
+- `services`: Angular services
+- `routing`: Route configurations
+- `build`: Build system changes
+- `deps`: Dependencies updates
+
+## Examples of CORRECT Commit Messages:
+
+```
+feat(auth): add user login component
+fix(api): resolve timeout in user service
+docs(readme): update installation instructions
+style(components): format code with prettier
+refactor(ui): simplify button component logic
+perf(services): optimize data loading
+test(auth): add unit tests for login service
+build(deps): update angular to v18
+ci(workflow): add automated testing
+chore(config): update eslint rules
+```
+
+## Examples of INCORRECT Messages (DO NOT GENERATE):
+
+```
+Add user login component
+Fix API timeout issue
+Update documentation
+Format code
+Simplify UI logic
+```
+
+## For Current Changes
+
+Based on the file changes involving git commit rules and cursor configuration:
+
+- **Type:** `chore` (configuration changes that don't modify src code)
+- **Scope:** `config` (relates to project configuration)
+- **Subject:** brief description of what was configured
+
+**Correct format:** `chore(config): add commitizen conventions for git messages`

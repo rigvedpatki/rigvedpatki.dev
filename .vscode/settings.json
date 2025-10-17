@@ -40,5 +40,10 @@
   // Additional helpful settings
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true
+  "files.trimFinalNewlines": true,
+
+  // Git commit message settings
+  "git.inputValidation": "always",
+  "git.inputValidationLength": 80,
+  "git.inputValidationSubjectLength": 80
 }

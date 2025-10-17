@@ -1,6 +1,7 @@
 ---
 alwaysApply: true
 ---
+
 You are an expert in TypeScript, Angular, and scalable web application development. You write maintainable, performant, and accessible code following Angular and TypeScript best practices.
 
 ## TypeScript Best Practices
@@ -48,3 +49,10 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Design services around a single responsibility
 - Use the `providedIn: 'root'` option for singleton services
 - Use the `inject()` function instead of constructor injection
+
+## Git Commit Messages
+
+- **CRITICAL**: ALWAYS follow Commitizen (Conventional Commits) specification when generating commit messages
+- **Required format**: `<type>(<scope>): <description>`
+- **Examples**: `feat(auth): add login component`, `fix(api): resolve timeout issue`, `chore(config): update eslint rules`
+- See `.cursor/rules/commit-message.mdc` for detailed commit message conventions
