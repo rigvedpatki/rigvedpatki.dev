@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    // Essential formatting and linting
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+
+    // Angular development
+    "angular.ng-template",
+
+    // TypeScript support
+    "ms-vscode.vscode-typescript-next",
+
+    // Additional helpful extensions
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-json",
+    "redhat.vscode-yaml",
+    "ms-vscode.live-server",
+
+    // Git integration
+    "eamodio.gitlens",
+
+    // IntelliSense and productivity
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-typescript-next"
+  ],
+  "unwantedRecommendations": [
+    // Avoid conflicts with our setup
+    "ms-vscode.vscode-typescript",
+    "hookyqr.beautify"
+  ]
+}
