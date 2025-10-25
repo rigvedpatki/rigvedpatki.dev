@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'tailwindcss';
+
+@font-face {
+  font-family: 'MesloLGS NF';
+  src: url('../public/fonts/MesloLGS-NF-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset and full screen styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'MesloLGS NF', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
