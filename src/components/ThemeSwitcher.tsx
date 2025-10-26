@@ -1,17 +1,17 @@
-import { createEffect, createSignal, onMount } from "solid-js";
+import { createEffect, createSignal, onMount } from 'solid-js';
 
-export type Theme = "light" | "dark";
+export type Theme = 'light' | 'dark';
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = createSignal<Theme>("dark");
+  const [theme, setTheme] = createSignal<Theme>('dark');
   const [mounted, setMounted] = createSignal<boolean>(false);
 
   onMount(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme;
+    const savedTheme = localStorage.getItem('theme') as Theme;
     const preferDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      '(prefers-color-scheme: dark)'
     ).matches;
-    const initialTheme = savedTheme || (preferDark ? "dark" : "light");
+    const initialTheme = savedTheme || (preferDark ? 'dark' : 'light');
     setTheme(initialTheme);
     setMounted(true);
   });
@@ -19,15 +19,15 @@ export default function ThemeSwitcher() {
   createEffect(() => {
     if (!mounted()) return;
     const currentTheme = theme();
-    document.documentElement.setAttribute("data-theme", currentTheme);
-    localStorage.setItem("theme", currentTheme);
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('theme', currentTheme);
   });
 
   const toggleTheme = () => {
-    if (theme() === "light") {
-      setTheme("dark");
+    if (theme() === 'light') {
+      setTheme('dark');
     } else {
-      setTheme("light");
+      setTheme('light');
     }
   };
 
@@ -38,7 +38,7 @@ export default function ThemeSwitcher() {
         <input
           type="checkbox"
           class="theme-controller sr-only"
-          checked={theme() === "dark"}
+          checked={theme() === 'dark'}
           onChange={toggleTheme}
         />
         {/* sun icon */}
