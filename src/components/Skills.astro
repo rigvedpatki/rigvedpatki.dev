@@ -1,124 +1,320 @@
 ---
-
+import { Image } from 'astro:assets';
+import javascript from '../assets/icons/javascript.svg';
+import typescript from '../assets/icons/typescript.svg';
+import go from '../assets/icons/go.svg';
+import python from '../assets/icons/python.svg';
+import java from '../assets/icons/java.svg';
+import angular from '../assets/icons/angular.svg';
+import vue from '../assets/icons/vue.svg';
+import react from '../assets/icons/react.svg';
+import solidJs from '../assets/icons/solid-js.svg';
+import astro from '../assets/icons/astro.svg';
+import nodeJs from '../assets/icons/node-js.svg';
+import expressJs from '../assets/icons/express-js.svg';
+import nestJs from '../assets/icons/nest-js.svg';
+import springBoot from '../assets/icons/spring-boot.svg';
+import fiber from '../assets/icons/fiber.svg';
+import docker from '../assets/icons/docker.svg';
+import kubernetes from '../assets/icons/kubernetes.svg';
+import aws from '../assets/icons/aws.svg';
+import gcp from '../assets/icons/gcp.svg';
+import mysql from '../assets/icons/mysql.svg';
+import mongo from '../assets/icons/mongo.svg';
 ---
 
 <div class="flex flex-col gap-y-5 md:flex-row md:gap-y-0">
-  <div class="text-xl font-semibold md:w-1/3">
-    <h2>Skills</h2>
+  <div class="text-xl font-semibold md:w-1/4">
+    <div class="flex flex-row items-center justify-start gap-x-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 640 640"
+        class="h-7 w-7 shrink-0"
+      >
+        <path
+          fill="currentColor"
+          d="M102.8 57.3C108.2 51.9 116.6 51.1 123 55.3L241.9 134.5C250.8 140.4 256.1 150.4 256.1 161.1L256.1 210.7L346.9 301.5C380.2 286.5 420.8 292.6 448.1 320L574.2 446.1C592.9 464.8 592.9 495.2 574.2 514L514.1 574.1C495.4 592.8 465 592.8 446.2 574.1L320.1 448C292.7 420.6 286.6 380.1 301.6 346.8L210.8 256L161.2 256C150.5 256 140.5 250.7 134.6 241.8L55.4 122.9C51.2 116.6 52 108.1 57.4 102.7L102.8 57.3zM247.8 360.8C241.5 397.7 250.1 436.7 274 468L179.1 563C151 591.1 105.4 591.1 77.3 563C49.2 534.9 49.2 489.3 77.3 461.2L212.7 325.7L247.9 360.8zM416.1 64C436.2 64 455.5 67.7 473.2 74.5C483.2 78.3 485 91 477.5 98.6L420.8 155.3C417.8 158.3 416.1 162.4 416.1 166.6L416.1 208C416.1 216.8 423.3 224 432.1 224L473.5 224C477.7 224 481.8 222.3 484.8 219.3L541.5 162.6C549.1 155.1 561.8 156.9 565.6 166.9C572.4 184.6 576.1 203.9 576.1 224C576.1 267.2 558.9 306.3 531.1 335.1L482 286C448.9 253 403.5 240.3 360.9 247.6L304.1 190.8L304.1 161.1L303.9 156.1C303.1 143.7 299.5 131.8 293.4 121.2C322.8 86.2 366.8 64 416.1 63.9z"
+        ></path></svg
+      >
+      <h2>Skills</h2>
+    </div>
   </div>
-  <div class="flex flex-col gap-y-3 md:w-2/3">
+  <div class="flex flex-col gap-y-3 md:w-3/4">
     <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
       <h3 class="w-1/5 font-medium">Languages</h3>
       <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-        <button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={javascript}
+            alt="JavaScript"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>JavaScript</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>ipsum</p>
-        </button>
+          <Image
+            src={typescript}
+            alt="TypeScript"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>TypeScript</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
+        >
+          <Image
+            src={go}
+            alt="Go"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Go Lang</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
+        >
+          <Image
+            src={python}
+            alt="Python"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Python</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
+        >
+          <Image
+            src={java}
+            alt="Java"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Java</p>
+        </div>
       </div>
     </div>
     <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
       <h3 class="w-1/5 font-medium">Frontend</h3>
       <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-        <button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={angular}
+            alt="Angular"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Angular</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>ipsum</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={vue}
+            alt="Vue.js"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Vue.js</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={react}
+            alt="React"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>React</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>ipsum</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={solidJs}
+            alt="Solid.js"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Solid.js</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
-        >
-          <p>ipsum</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
-        >
-          <p>lorem</p>
-        </button>
+          <Image
+            src={astro}
+            alt="Astro"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Astro</p>
+        </div>
       </div>
     </div>
     <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
       <h3 class="w-1/5 font-medium">Backend</h3>
       <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-        <button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={nodeJs}
+            alt="Node.js"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Node.js</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>ipsum</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={expressJs}
+            alt="Express.js"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Express.js</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={nestJs}
+            alt="Nest.js"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Nest.js</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>ipsum</p>
-        </button>
+          <Image
+            src={springBoot}
+            alt="Spring Boot"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Spring Boot</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
+        >
+          <Image
+            src={fiber}
+            alt="Go Fiber"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Go - Fiber</p>
+        </div>
       </div>
     </div>
     <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
-      <h3 class="w-1/5 font-medium">Others</h3>
+      <h3 class="w-1/5 font-medium">Cloud & DevOps</h3>
       <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-        <button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={docker}
+            alt="Docker"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Docker</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>ipsum</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={kubernetes}
+            alt="Kubernetes"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>Kubernetes</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={aws}
+            alt="AWS"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>AWS</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>ipsum</p>
-        </button><button
-          class="inline-flex items-center gap-x-1 bg-primary-foreground border border-border px-2 py-1 text-sm transition-all hover:bg-input cursor-default rounded-xl"
-          data-astro-prefetch=""
+          <Image
+            src={gcp}
+            alt="GCP"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>GCP</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
+      <h3 class="w-1/5 font-medium">Databases</h3>
+      <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
         >
-          <p>lorem</p>
-        </button>
+          <Image
+            src={mysql}
+            alt="MySQL"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>MySQL</p>
+        </div>
+        <div
+          class="inline-flex items-center gap-x-1 px-2 py-1 text-sm transition-all cursor-default rounded-xl"
+        >
+          <Image
+            src={mongo}
+            alt="MongoDB"
+            class="h-6 w-6 shrink-0"
+            loading="eager"
+            decoding="async"
+          />
+          <p>MongoDB</p>
+        </div>
       </div>
     </div>
   </div>
