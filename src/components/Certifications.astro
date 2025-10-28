@@ -1,29 +1,18 @@
 ---
-
+import CertificateIcon from '../assets/icons/solid/certificate.svg';
 ---
 
-<div class="flex flex-col gap-y-5 md:flex-row md:gap-y-0">
-  <div class="text-xl font-semibold md:w-1/4">
-    <div class="flex flex-row items-center justify-start gap-x-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 640 640"
-        class="h-7 w-7 shrink-0"
-      >
-        <path
-          fill="currentColor"
-          d="M32 176C32 134.5 63.6 100.4 104 96.4L104 96L384 96C437 96 480 139 480 192L480 368L304 368C264.2 368 232 400.2 232 440L232 500C232 524.3 212.3 544 188 544C163.7 544 144 524.3 144 500L144 272L80 272C53.5 272 32 250.5 32 224L32 176zM268.8 544C275.9 530.9 280 515.9 280 500L280 440C280 426.7 290.7 416 304 416L552 416C565.3 416 576 426.7 576 440L576 464C576 508.2 540.2 544 496 544L268.8 544zM112 144C94.3 144 80 158.3 80 176L80 224L144 224L144 176C144 158.3 129.7 144 112 144z"
-        ></path></svg
-      >
-      <h2>Certifications</h2>
-    </div>
-  </div>
-  <div class="flex flex-col gap-y-3 md:w-3/4">
+<div class="card bg-base-100 border border-base-300 shadow-sm">
+  <div class="card-body">
+    <h2 class="card-title text-xl font-semibold flex items-center gap-2 mb-4">
+      <CertificateIcon class="h-7 w-7 shrink-0 fill-primary" />
+      Certifications
+    </h2>
     <div
-      class="relative rounded-2xl border border-border bg-primary-foreground px-5 py-3"
+      class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-3"
     >
       <div class="flex flex-col gap-y-1.5">
-        <ul class="ml-4 list-disc text-muted-foreground">
+        <ul class="ml-4 list-disc text-base-content/70">
           <li>
             Artificial Intelligence General Awareness | Veritas Technologies LLC
             | April 2024

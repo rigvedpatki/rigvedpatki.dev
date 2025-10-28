@@ -1,29 +1,18 @@
 ---
-
+import ProjectsIcon from '../assets/icons/solid/projects.svg';
 ---
 
-<div class="flex flex-col gap-y-5 md:flex-row md:gap-y-0">
-  <div class="text-xl font-semibold md:w-1/4">
-    <div class="flex flex-row items-center justify-start gap-x-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 640 640"
-        class="h-7 w-7 shrink-0"
-      >
-        <path
-          fill="currentColor"
-          d="M88 289.6L64.4 360.2L64.4 160C64.4 124.7 93.1 96 128.4 96L267.1 96C280.9 96 294.4 100.5 305.5 108.8L343.9 137.6C349.4 141.8 356.2 144 363.1 144L480.4 144C515.7 144 544.4 172.7 544.4 208L544.4 224L179 224C137.7 224 101 250.4 87.9 289.6zM509.8 512L131 512C98.2 512 75.1 479.9 85.5 448.8L133.5 304.8C140 285.2 158.4 272 179 272L557.8 272C590.6 272 613.7 304.1 603.3 335.2L555.3 479.2C548.8 498.8 530.4 512 509.8 512z"
-        ></path></svg
-      >
-      <h2>Projects</h2>
-    </div>
-  </div>
-  <div class="flex flex-col gap-y-3 md:w-3/4">
+<div class="card bg-base-100 border border-base-300 shadow-sm">
+  <div class="card-body">
+    <h2 class="card-title text-xl font-semibold flex items-center gap-2 mb-4">
+      <ProjectsIcon class="h-7 w-7 shrink-0 fill-primary" />
+      Projects
+    </h2>
     <div
-      class="relative rounded-2xl border border-border bg-primary-foreground px-5 py-3"
+      class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-3"
     >
       <div class="flex flex-col gap-y-1.5">
-        <ul class="ml-4 list-disc text-muted-foreground">
+        <ul class="ml-4 list-disc text-base-content/70">
           <li>
             System Health Insights - Analytics dashboard with frontend
             leadership
