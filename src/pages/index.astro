@@ -2,10 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import Home from '../components/Home.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const seoProps = {
+  title: 'Rigved Patki - Full Stack Developer | Portfolio',
+  description:
+    'Full Stack Developer with 9+ years of experience building scalable web applications. Specialized in Angular, React, Node.js, Java, Go, AWS, and Kubernetes. Currently Member of Technical Staff III at Cohesity.',
+  image: '/og-image.png',
+  type: 'website',
+  keywords:
+    'full stack developer, software engineer, Angular, React, Node.js, Java, Go, AWS, Kubernetes, Cohesity, portfolio, Rigved Patki'
+};
 ---
 
-<Layout>
+<Layout {...seoProps}>
   <Home />
 </Layout>

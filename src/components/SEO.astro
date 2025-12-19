@@ -1,0 +1,48 @@
+---
+const {
+  title = 'Rigved Patki - Full Stack Developer',
+  description = 'Full Stack Developer with 9+ years of experience building scalable web applications. Specialized in Angular, React, Node.js, Java, Go, AWS, and Kubernetes. Currently Member of Technical Staff III at Cohesity.',
+  image = '/og-image.png',
+  type = 'website',
+  canonical,
+  keywords = 'full stack developer, software engineer, Angular, React, Node.js, Java, Go, AWS, Kubernetes, Cohesity, portfolio',
+  author = 'Rigved Patki'
+} = Astro.props;
+
+const siteUrl = Astro.site || 'https://rigvedpatki.dev';
+const currentUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString();
+const imageUrl = image.startsWith('http')
+  ? image
+  : new URL(image, siteUrl).toString();
+---
+
+<!-- Primary Meta Tags -->
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content={author} />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="English" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={currentUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={currentUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content="Rigved Patki - Portfolio" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={currentUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<!-- Additional Meta Tags -->
+<meta name="theme-color" content="#ffffff" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />

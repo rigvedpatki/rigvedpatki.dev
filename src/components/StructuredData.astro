@@ -1,0 +1,64 @@
+---
+const siteUrl = Astro.site || 'https://rigvedpatki.dev';
+
+// Person Schema
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Rigved Patki',
+  jobTitle: 'Full Stack Developer',
+  description:
+    'Full Stack Developer with 9+ years of experience building scalable web applications. Specialized in Angular, React, Node.js, Java, Go, AWS, and Kubernetes.',
+  url: siteUrl,
+  sameAs: [
+    'https://www.linkedin.com/in/rigved-satish-patki/',
+    'https://github.com/rigvedpatki'
+  ],
+  knowsAbout: [
+    'Full Stack Development',
+    'Angular',
+    'React',
+    'Vue.js',
+    'Node.js',
+    'NestJS',
+    'Java',
+    'Spring Boot',
+    'Go',
+    'TypeScript',
+    'JavaScript',
+    'AWS',
+    'GCP',
+    'Docker',
+    'Kubernetes',
+    'MongoDB',
+    'MySQL',
+    'Software Architecture',
+    'Scrum Master'
+  ],
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'University of Pune'
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Cohesity',
+    jobTitle: 'Member of Technical Staff III'
+  }
+};
+
+// WebSite Schema
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Rigved Patki - Portfolio',
+  url: siteUrl,
+  description: 'Portfolio website of Rigved Patki, Full Stack Developer',
+  author: {
+    '@type': 'Person',
+    name: 'Rigved Patki'
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />

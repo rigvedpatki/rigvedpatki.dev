@@ -22,11 +22,17 @@ import MailIcon from '../assets/icons/solid/mail.svg';
     <p class="font-medium">Full Stack Developer</p>
     <div class="flex flex-wrap justify-center gap-x-7 gap-y-3">
       <div class="flex flex-row items-center justify-center gap-x-2">
-        <WorkIcon class="h-5 w-5 shrink-0 fill-primary" />
+        <WorkIcon
+          class="h-5 w-5 shrink-0 fill-primary"
+          aria-label="Work icon"
+        />
         <p>Cohesity Inc</p>
       </div>
       <div class="flex flex-row items-center justify-center gap-x-2">
-        <PlaceIcon class="h-5 w-5 shrink-0 fill-primary" />
+        <PlaceIcon
+          class="h-5 w-5 shrink-0 fill-primary"
+          aria-label="Location icon"
+        />
         <p>Pune, Maharashtra</p>
       </div>
     </div>
@@ -36,8 +42,13 @@ import MailIcon from '../assets/icons/solid/mail.svg';
           class="flex flex-row items-center justify-center gap-x-2 btn btn-ghost btn-circle"
           href="https://www.linkedin.com/in/rigved-satish-patki/"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn profile"
         >
-          <LinkedInIcon class="h-7 w-7 shrink-0 fill-primary" />
+          <LinkedInIcon
+            class="h-7 w-7 shrink-0 fill-primary"
+            aria-hidden="true"
+          />
         </a>
       </div>
       <div class="tooltip" data-tip="Connect on GitHub">
@@ -45,16 +56,22 @@ import MailIcon from '../assets/icons/solid/mail.svg';
           class="flex flex-row items-center justify-center gap-x-2 btn btn-ghost btn-circle"
           href="https://github.com/rigvedpatki"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub profile"
         >
-          <GitHubIcon class="h-7 w-7 shrink-0 fill-primary" />
+          <GitHubIcon
+            class="h-7 w-7 shrink-0 fill-primary"
+            aria-hidden="true"
+          />
         </a>
       </div>
       <div class="tooltip" data-tip="Connect on Email">
         <a
           class="flex flex-row items-center justify-center gap-x-2 btn btn-ghost btn-circle"
           href="mailto:rigved.patki@outlook.com"
+          aria-label="Email contact"
         >
-          <MailIcon class="h-7 w-7 shrink-0 fill-primary" />
+          <MailIcon class="h-7 w-7 shrink-0 fill-primary" aria-hidden="true" />
         </a>
       </div>
     </div>

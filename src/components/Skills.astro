@@ -25,10 +25,13 @@ import mongo from '../assets/icons/skills/mongo.svg';
 import chi from '../assets/icons/skills/chi.svg';
 ---
 
-<div class="card bg-base-100 border border-base-300 shadow-sm">
+<section class="card bg-base-100 border border-base-300 shadow-sm">
   <div class="card-body">
     <h2 class="card-title text-xl font-semibold flex items-center gap-2 mb-4">
-      <SkillsIcon class="h-7 w-7 shrink-0 fill-primary" />
+      <SkillsIcon
+        class="h-7 w-7 shrink-0 fill-primary"
+        aria-label="Skills icon"
+      />
       Skills
     </h2>
     <div class="flex flex-col gap-y-6">
@@ -41,8 +44,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={javascript}
               alt="JavaScript"
+              width={20}
+              height={20}
               class="h-5 w-5 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="high"
               decoding="async"
             />
             <p>JavaScript</p>
@@ -53,8 +59,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={typescript}
               alt="TypeScript"
+              width={20}
+              height={20}
               class="h-5 w-5 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="high"
               decoding="async"
             />
             <p>TypeScript</p>
@@ -65,8 +74,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={go}
               alt="Go"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="high"
               decoding="async"
             />
             <p>Go Lang</p>
@@ -77,8 +89,10 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={python}
               alt="Python"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
               decoding="async"
             />
             <p>Python</p>
@@ -89,8 +103,10 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={java}
               alt="Java"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
               decoding="async"
             />
             <p>Java</p>
@@ -106,8 +122,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={angular}
               alt="Angular"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Angular</p>
@@ -118,8 +137,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={vue}
               alt="Vue.js"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Vue.js</p>
@@ -130,8 +152,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={react}
               alt="React"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>React</p>
@@ -142,8 +167,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={solidJs}
               alt="Solid.js"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Solid.js</p>
@@ -154,8 +182,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={astro}
               alt="Astro"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Astro</p>
@@ -171,8 +202,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={nodeJs}
               alt="Node.js"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Node.js</p>
@@ -183,8 +217,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={expressJs}
               alt="Express.js"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Express.js</p>
@@ -195,8 +232,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={nestJs}
               alt="Nest.js"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Nest.js</p>
@@ -207,8 +247,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={springBoot}
               alt="Spring Boot"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Java -Spring Boot</p>
@@ -219,8 +262,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={fiber}
               alt="Go Fiber"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Go - Fiber</p>
@@ -231,8 +277,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={chi}
               alt="Go Chi"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Go - Chi</p>
@@ -248,8 +297,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={docker}
               alt="Docker"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Docker</p>
@@ -260,8 +312,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={kubernetes}
               alt="Kubernetes"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>Kubernetes</p>
@@ -272,8 +327,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={aws}
               alt="AWS"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>AWS</p>
@@ -284,8 +342,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={gcp}
               alt="GCP"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>GCP</p>
@@ -301,8 +362,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={mysql}
               alt="MySQL"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>MySQL</p>
@@ -313,8 +377,11 @@ import chi from '../assets/icons/skills/chi.svg';
             <Image
               src={mongo}
               alt="MongoDB"
+              width={24}
+              height={24}
               class="h-6 w-6 shrink-0"
-              loading="eager"
+              loading="lazy"
+              fetchpriority="low"
               decoding="async"
             />
             <p>MongoDB</p>
@@ -323,4 +390,4 @@ import chi from '../assets/icons/skills/chi.svg';
       </div>
     </div>
   </div>
-</div>
+</section>
