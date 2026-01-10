@@ -1,0 +1,27 @@
+---
+const gaId = import.meta.env.PUBLIC_GA_ID;
+const isProduction = import.meta.env.PROD;
+---
+
+{isProduction && gaId && (
+  <>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+    />
+    <script
+      is:inline
+      set:html={`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${gaId}', {
+          anonymize_ip: true,
+          respect_dnt: true,
+          cookie_flags: 'SameSite=None;Secure'
+        });
+      `}
+    />
+  </>
+)}

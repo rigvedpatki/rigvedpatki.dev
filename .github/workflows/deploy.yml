@@ -30,6 +30,8 @@ jobs:
         uses: withastro/action@v3
         with:
           package-manager: pnpm@latest
+        env:
+          PUBLIC_GA_ID: ${{ secrets.PUBLIC_GA_ID }}
 
   deploy:
     needs: build
