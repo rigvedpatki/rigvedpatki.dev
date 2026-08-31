@@ -3,16 +3,17 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 const isProduction = import.meta.env.PROD;
 ---
 
-{isProduction && gaId && (
-  <>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-    />
-    <script
-      is:inline
-      set:html={`
+{
+  isProduction && gaId && (
+    <>
+      {/* Google tag (gtag.js) */}
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+      />
+      <script
+        is:inline
+        set:html={`
         window.dataLayer = window.dataLayer || [];
         function gtag(){window.dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,7 +22,29 @@ const isProduction = import.meta.env.PROD;
           respect_dnt: true,
           cookie_flags: 'SameSite=None;Secure'
         });
+
+        document.addEventListener('click', function(event) {
+          var link = event.target.closest('[data-analytics-event]');
+          if (!link) return;
+
+          var parameters = {};
+          if (link.dataset.analyticsSocialNetwork) {
+            parameters.social_network = link.dataset.analyticsSocialNetwork;
+          }
+          if (link.dataset.analyticsLocation) {
+            parameters.location = link.dataset.analyticsLocation;
+          }
+          if (link.dataset.analyticsFileName) {
+            parameters.file_name = link.dataset.analyticsFileName;
+          }
+          if (link.dataset.analyticsFileType) {
+            parameters.file_type = link.dataset.analyticsFileType;
+          }
+
+          gtag('event', link.dataset.analyticsEvent, parameters);
+        });
       `}
-    />
-  </>
-)}
+      />
+    </>
+  )
+}

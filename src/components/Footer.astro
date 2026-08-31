@@ -22,7 +22,9 @@ import GitHubIcon from '../assets/icons/solid/github.svg';
           rel="noopener noreferrer"
           class="inline-block text-base-content/60 transition-all hover:text-base-content/40"
           aria-label="LinkedIn profile"
-          onclick="if(typeof gtag !== 'undefined') { gtag('event', 'social_click', { 'social_network': 'LinkedIn', 'location': 'footer' }); }"
+          data-analytics-event="social_click"
+          data-analytics-social-network="LinkedIn"
+          data-analytics-location="footer"
         >
           <LinkedInIcon
             class="h-4 w-4 shrink-0 fill-current"
@@ -35,7 +37,9 @@ import GitHubIcon from '../assets/icons/solid/github.svg';
           rel="noopener noreferrer"
           class="inline-block text-base-content/60 transition-all hover:text-base-content/40"
           aria-label="GitHub profile"
-          onclick="if(typeof gtag !== 'undefined') { gtag('event', 'social_click', { 'social_network': 'GitHub', 'location': 'footer' }); }"
+          data-analytics-event="social_click"
+          data-analytics-social-network="GitHub"
+          data-analytics-location="footer"
         >
           <GitHubIcon
             class="h-4 w-4 shrink-0 fill-current"

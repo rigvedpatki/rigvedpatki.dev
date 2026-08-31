@@ -45,7 +45,9 @@ export default [
     files: ['**/*.astro'],
     rules: {
       // Astro components can have unused props from the frontmatter
-      '@typescript-eslint/no-unused-vars': 'off'
+      '@typescript-eslint/no-unused-vars': 'off',
+      // Astro and Prettier preserve explicit closing tags for native SVG elements
+      'solid/self-closing-comp': 'off'
     }
   },
   {
