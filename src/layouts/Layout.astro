@@ -4,7 +4,8 @@ import SEO from '../components/SEO.astro';
 import StructuredData from '../components/StructuredData.astro';
 import Analytics from '../components/Analytics.astro';
 
-const { title, description, image, type, canonical, keywords } = Astro.props;
+const { title, description, image, type, canonical, keywords, robots } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -27,6 +28,7 @@ const { title, description, image, type, canonical, keywords } = Astro.props;
       type={type}
       canonical={canonical}
       keywords={keywords}
+      robots={robots}
     />
     <StructuredData />
     <Analytics />

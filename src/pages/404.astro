@@ -1,0 +1,64 @@
+---
+import resume from '../assets/resume/RigvedPatki.pdf';
+import DownloadIcon from '../assets/icons/solid/download.svg';
+import HomeIcon from '../assets/icons/solid/home.svg';
+import MailIcon from '../assets/icons/solid/mail.svg';
+import ProjectsIcon from '../assets/icons/solid/projects.svg';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+
+const seoProps = {
+  title: 'Page Not Found | Rigved Patki',
+  description:
+    "The requested page could not be found. Return to Rigved Patki's portfolio or explore his projects.",
+  robots: 'noindex, follow'
+};
+---
+
+<Layout {...seoProps}>
+  <main
+    class="flex min-h-screen w-screen max-w-4xl flex-col px-6 pb-10 pt-7 text-sm leading-relaxed sm:px-10 lg:px-12"
+  >
+    <Header />
+    <section
+      class="flex flex-1 flex-col items-center justify-center py-16 text-center"
+      aria-labelledby="not-found-title"
+    >
+      <p
+        class="mb-3 text-sm font-semibold uppercase tracking-widest text-primary"
+      >
+        Error 404
+      </p>
+      <h1 id="not-found-title" class="text-4xl font-bold sm:text-5xl">
+        This page could not be found.
+      </h1>
+      <p class="mt-5 max-w-lg text-base text-base-content/70">
+        The address may have changed, or the page may no longer exist. Choose a
+        destination below to get back on track.
+      </p>
+      <nav
+        class="mt-8 flex max-w-xl flex-wrap justify-center gap-3"
+        aria-label="Page recovery"
+      >
+        <a class="btn btn-primary" href="/">
+          <HomeIcon class="h-5 w-5 fill-current" aria-hidden="true" />
+          Home
+        </a>
+        <a class="btn btn-outline" href="/#projects">
+          <ProjectsIcon class="h-5 w-5 fill-current" aria-hidden="true" />
+          Projects
+        </a>
+        <a class="btn btn-outline" href={resume}>
+          <DownloadIcon class="h-5 w-5 fill-current" aria-hidden="true" />
+          Resume
+        </a>
+        <a class="btn btn-ghost" href="mailto:rigved.patki@outlook.com">
+          <MailIcon class="h-5 w-5 fill-current" aria-hidden="true" />
+          Email me
+        </a>
+      </nav>
+    </section>
+    <Footer />
+  </main>
+</Layout>

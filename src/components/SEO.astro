@@ -6,7 +6,8 @@ const {
   type = 'website',
   canonical,
   keywords = 'full stack developer, software engineer, Angular, React, Node.js, Java, Go, AWS, Kubernetes, Cohesity, portfolio',
-  author = 'Rigved Patki'
+  author = 'Rigved Patki',
+  robots = 'index, follow'
 } = Astro.props;
 
 const siteUrl = Astro.site || 'https://rigvedpatki.dev';
@@ -24,7 +25,7 @@ const imageUrl = image.startsWith('http')
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
 <meta name="author" content={author} />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={robots} />
 <meta name="language" content="English" />
 
 <!-- Canonical URL -->
