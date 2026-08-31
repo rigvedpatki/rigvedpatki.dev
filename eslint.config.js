@@ -46,6 +46,9 @@ export default [
     rules: {
       // Astro components can have unused props from the frontmatter
       '@typescript-eslint/no-unused-vars': 'off',
+      // Solid rendering rules do not apply to Astro template expressions
+      'solid/no-destructure': 'off',
+      'solid/prefer-for': 'off',
       // Astro and Prettier preserve explicit closing tags for native SVG elements
       'solid/self-closing-comp': 'off'
     }

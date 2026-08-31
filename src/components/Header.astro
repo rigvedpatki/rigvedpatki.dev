@@ -1,19 +1,122 @@
 ---
 import ThemeSwitcher from './ThemeSwitcher.tsx';
+
+const sectionLinks = [
+  { href: '/#about', label: 'About' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#education', label: 'Education' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#certifications', label: 'Certifications' }
+];
 ---
 
 <header
-  class="mb-12 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start"
+  class="sticky top-0 z-50 mb-12 w-full border-b border-base-300/80 bg-base-100/95 py-3 text-sm backdrop-blur-md"
 >
   <nav
-    class="relative mx-auto flex w-full items-center justify-between sm:flex sm:items-center"
+    class="relative mx-auto flex w-full items-center justify-between gap-4"
     aria-label="Main navigation"
   >
-    <a class="flex-none text-xl font-semibold" href="/" aria-label="Home">
+    <a
+      class="flex-none text-xl font-semibold outline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary"
+      href="/"
+      aria-label="Home"
+    >
       rigved patki
     </a>
-    <div class="flex flex-row items-center justify-center gap-x-5 sm:gap-x-7">
+
+    <div class="hidden items-center gap-1 md:flex">
+      {
+        sectionLinks.map(({ href, label }) => (
+          <a
+            class="rounded px-2 py-2 font-medium text-base-content/70 outline-offset-2 transition-colors hover:bg-base-200 hover:text-base-content focus-visible:outline-2 focus-visible:outline-primary data-[active=true]:bg-base-200 data-[active=true]:text-primary"
+            href={href}
+            data-section-link
+          >
+            {label}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="flex items-center gap-3">
+      <details class="group relative md:hidden" data-mobile-navigation>
+        <summary
+          class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded outline-offset-2 hover:bg-base-200 focus-visible:outline-2 focus-visible:outline-primary [&::-webkit-details-marker]:hidden"
+          aria-label="Open section navigation"
+          title="Sections"
+        >
+          <span class="sr-only">Sections</span>
+          <span class="flex w-5 flex-col gap-1.5" aria-hidden="true">
+            <span class="h-0.5 w-full rounded bg-current"></span>
+            <span class="h-0.5 w-full rounded bg-current"></span>
+            <span class="h-0.5 w-full rounded bg-current"></span>
+          </span>
+        </summary>
+        <div
+          class="absolute right-0 top-12 flex min-w-48 flex-col gap-1 rounded border border-base-300 bg-base-100 p-2 shadow-lg"
+        >
+          {
+            sectionLinks.map(({ href, label }) => (
+              <a
+                class="rounded px-3 py-2.5 font-medium text-base-content/70 outline-offset-2 hover:bg-base-200 hover:text-base-content focus-visible:outline-2 focus-visible:outline-primary data-[active=true]:bg-base-200 data-[active=true]:text-primary"
+                href={href}
+                data-section-link
+              >
+                {label}
+              </a>
+            ))
+          }
+        </div>
+      </details>
       <ThemeSwitcher client:load />
     </div>
   </nav>
 </header>
+
+<script>
+  const links = [
+    ...document.querySelectorAll<HTMLAnchorElement>('[data-section-link]')
+  ];
+  const mobileNavigation = document.querySelector<HTMLDetailsElement>(
+    '[data-mobile-navigation]'
+  );
+
+  const setActiveLink = (sectionId: string) => {
+    links.forEach(link => {
+      const isActive = link.hash === `#${sectionId}`;
+      link.dataset.active = String(isActive);
+
+      if (isActive) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      setActiveLink(link.hash.slice(1));
+      mobileNavigation?.removeAttribute('open');
+    });
+  });
+
+  if (window.location.pathname === '/') {
+    const sections = links
+      .map(link => document.getElementById(link.hash.slice(1)))
+      .filter((section): section is HTMLElement => section !== null);
+
+    const observer = new IntersectionObserver(
+      entries => {
+        const visibleSection = entries.find(entry => entry.isIntersecting);
+        if (visibleSection) setActiveLink(visibleSection.target.id);
+      },
+      { rootMargin: '-20% 0px -65% 0px' }
+    );
+
+    sections.forEach(section => observer.observe(section));
+    if (window.location.hash) setActiveLink(window.location.hash.slice(1));
+  }
+</script>

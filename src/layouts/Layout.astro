@@ -33,7 +33,7 @@ const { title, description, image, type, canonical, keywords, robots } =
     <StructuredData />
     <Analytics />
   </head>
-  <body class="flex justify-center bg-base-100 text-base-content">
+  <body class="flex items-start justify-center bg-base-100 text-base-content">
     <slot />
   </body>
 </html>
@@ -43,6 +43,6 @@ const { title, description, image, type, canonical, keywords, robots } =
   body {
     margin: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
   }
 </style>
