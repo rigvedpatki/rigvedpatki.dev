@@ -1,15 +1,21 @@
 ---
+import ghibliProfile from '../assets/images/ghibli-profile.webp';
+
 const siteUrl = Astro.site || 'https://rigvedpatki.dev';
+const personId = new URL('/#person', siteUrl).toString();
+const profileImageUrl = new URL(ghibliProfile.src, siteUrl).toString();
 
 // Person Schema
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': personId,
   name: 'Rigved Patki',
   jobTitle: 'Full Stack Developer',
   description:
     'Full Stack Developer with 9+ years of experience building scalable web applications. Specialized in Angular, React, Node.js, Java, Go, AWS, and Kubernetes.',
-  url: siteUrl,
+  url: siteUrl.toString(),
+  image: profileImageUrl,
   sameAs: [
     'https://www.linkedin.com/in/rigved-satish-patki/',
     'https://github.com/rigvedpatki'
@@ -35,15 +41,62 @@ const personSchema = {
     'Software Architecture',
     'Scrum Master'
   ],
-  alumniOf: {
-    '@type': 'EducationalOrganization',
-    name: 'University of Pune'
-  },
   worksFor: {
     '@type': 'Organization',
-    name: 'Cohesity',
-    jobTitle: 'Member of Technical Staff III'
-  }
+    name: 'Cohesity Inc'
+  },
+  alumniOf: [
+    {
+      '@type': 'EducationalOrganization',
+      name: 'Vishwakarma Institute of Technology'
+    },
+    {
+      '@type': 'EducationalOrganization',
+      name: 'EIT Digital Master School'
+    },
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'Technische Universität Berlin'
+    },
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'KTH Royal Institute of Technology'
+    },
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'Aalto University'
+    }
+  ],
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Master of Science in ICT Innovation: Cloud Computing and Services',
+      credentialCategory: "Master's degree",
+      recognizedBy: [
+        {
+          '@type': 'EducationalOrganization',
+          name: 'EIT Digital Master School'
+        },
+        {
+          '@type': 'CollegeOrUniversity',
+          name: 'Technische Universität Berlin'
+        },
+        {
+          '@type': 'CollegeOrUniversity',
+          name: 'KTH Royal Institute of Technology'
+        }
+      ]
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Bachelor of Technology in Information Technology',
+      credentialCategory: "Bachelor's degree",
+      recognizedBy: {
+        '@type': 'EducationalOrganization',
+        name: 'Vishwakarma Institute of Technology'
+      }
+    }
+  ]
 };
 
 // WebSite Schema
@@ -51,11 +104,11 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Rigved Patki - Portfolio',
-  url: siteUrl,
+  url: siteUrl.toString(),
   description: 'Portfolio website of Rigved Patki, Full Stack Developer',
   author: {
     '@type': 'Person',
-    name: 'Rigved Patki'
+    '@id': personId
   }
 };
 ---
