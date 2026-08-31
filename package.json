@@ -2,6 +2,7 @@
   "name": "rigvedpatki.dev",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@11.24.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,7 +13,11 @@
     "lint:fix": "eslint . --ext .js,.mjs,.cjs,.ts,.tsx,.astro --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm run lint && pnpm run format:check"
+    "typecheck": "astro check",
+    "links": "linkinator dist --recurse --clean-urls --check-fragments --retry --retry-errors --retry-errors-count 2 --retry-errors-jitter 500 --timeout 15000",
+    "test:browser": "playwright test",
+    "check": "pnpm run lint && pnpm run format:check && pnpm run typecheck",
+    "quality": "pnpm run check && pnpm run build && pnpm run links && pnpm run test:browser"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -22,12 +27,16 @@
     "solid-js": "^1.9.15"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/vite": "^4.3.3",
     "daisyui": "^5.7.17",
     "eslint": "^10.8.1",
     "eslint-plugin-astro": "^3.1.0",
     "eslint-plugin-solid": "^0.15.0",
+    "linkinator": "^8.1.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.3.3",

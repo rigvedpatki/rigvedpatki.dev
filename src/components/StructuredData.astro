@@ -113,5 +113,13 @@ const websiteSchema = {
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(personSchema)}
+/>
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(websiteSchema)}
+/>
