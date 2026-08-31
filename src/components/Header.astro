@@ -1,6 +1,8 @@
 ---
 import ThemeSwitcher from './ThemeSwitcher.tsx';
 
+const homeHref = Astro.url.pathname === '/' ? '#top' : '/';
+
 const sectionLinks = [
   { href: '/#about', label: 'About' },
   { href: '/#skills', label: 'Skills' },
@@ -20,8 +22,9 @@ const sectionLinks = [
   >
     <a
       class="flex-none text-xl font-semibold outline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary"
-      href="/"
+      href={homeHref}
       aria-label="Home"
+      data-scroll-link
     >
       rigved patki
     </a>
@@ -33,6 +36,7 @@ const sectionLinks = [
             class="rounded px-2 py-2 font-medium text-base-content/70 outline-offset-2 transition-colors hover:bg-base-200 hover:text-base-content focus-visible:outline-2 focus-visible:outline-primary data-[active=true]:bg-base-200 data-[active=true]:text-primary"
             href={href}
             data-section-link
+            data-scroll-link
           >
             {label}
           </a>
@@ -63,6 +67,7 @@ const sectionLinks = [
                 class="rounded px-3 py-2.5 font-medium text-base-content/70 outline-offset-2 hover:bg-base-200 hover:text-base-content focus-visible:outline-2 focus-visible:outline-primary data-[active=true]:bg-base-200 data-[active=true]:text-primary"
                 href={href}
                 data-section-link
+                data-scroll-link
               >
                 {label}
               </a>
@@ -76,6 +81,9 @@ const sectionLinks = [
 </header>
 
 <script>
+  const scrollLinks = [
+    ...document.querySelectorAll<HTMLAnchorElement>('[data-scroll-link]')
+  ];
   const links = [
     ...document.querySelectorAll<HTMLAnchorElement>('[data-section-link]')
   ];
@@ -96,14 +104,60 @@ const sectionLinks = [
     });
   };
 
-  links.forEach(link => {
+  scrollLinks.forEach(link => {
     link.addEventListener('click', () => {
-      setActiveLink(link.hash.slice(1));
+      if (link.matches('[data-section-link]')) {
+        setActiveLink(link.hash.slice(1));
+      }
       mobileNavigation?.removeAttribute('open');
     });
   });
 
   if (window.location.pathname === '/') {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    );
+
+    scrollLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        const target = document.getElementById(link.hash.slice(1));
+        if (!target || prefersReducedMotion.matches) return;
+
+        event.preventDefault();
+
+        const startPosition = window.scrollY;
+        const scrollOffset = Number.parseFloat(
+          window.getComputedStyle(target).scrollMarginTop
+        );
+        const targetPosition = Math.max(
+          0,
+          target.getBoundingClientRect().top + startPosition - scrollOffset
+        );
+        const distance = targetPosition - startPosition;
+        const duration = 850;
+        const startTime = performance.now();
+
+        const easeInOutCubic = (progress: number) =>
+          progress < 0.5 ? 4 * progress ** 3 : 1 - (-2 * progress + 2) ** 3 / 2;
+
+        const animateScroll = (currentTime: number) => {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          window.scrollTo(
+            0,
+            startPosition + distance * easeInOutCubic(progress)
+          );
+
+          if (progress < 1) {
+            window.requestAnimationFrame(animateScroll);
+          } else {
+            window.history.pushState(null, '', link.hash);
+          }
+        };
+
+        window.requestAnimationFrame(animateScroll);
+      });
+    });
+
     const sections = links
       .map(link => document.getElementById(link.hash.slice(1)))
       .filter((section): section is HTMLElement => section !== null);

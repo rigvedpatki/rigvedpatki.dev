@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+
 @plugin "daisyui" {
   themes:
     light --default,
@@ -7,10 +8,4 @@
 
 [id] {
   scroll-margin-top: 6rem;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
 }
