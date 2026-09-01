@@ -15,10 +15,22 @@ test('home page exposes its primary navigation and actions', async ({
 }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle(/Rigved Patki/);
+  await expect(page).toHaveTitle(
+    'Rigved Patki - Senior Full-Stack Engineer | Portfolio'
+  );
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+    'content',
+    /Senior Full-Stack Engineer with 9\+ years/
+  );
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Rigved Patki'
   );
+  await expect(page.getByText('Senior Full-Stack Engineer')).toBeVisible();
+  await expect(
+    page.getByText(
+      'Frontend architecture, cloud-native systems, and technical leadership'
+    )
+  ).toBeVisible();
 
   for (const sectionId of sectionIds) {
     await expect(page.locator(`#${sectionId}`)).toHaveCount(1);
