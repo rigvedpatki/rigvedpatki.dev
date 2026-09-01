@@ -32,7 +32,7 @@ not replace the P0-P2 business priorities in the audit.
 |     5 | Establish Lighthouse budgets (Done)         | P2             | None         | Baseline measurement after item 4                     |
 |     6 | Move repeated content into structured data  | Later          | None         | Preferably after content changes stabilize            |
 |     7 | Feature projects before full history        | P1             | None         | Approved featured-project set                         |
-|     8 | Reduce and differentiate content            | P1             | None         | Preserve verified facts and personal tone             |
+|     8 | Reduce and differentiate content (Done)     | P1             | None         | Preserve verified facts and personal tone             |
 |     9 | Sharpen the hero positioning                | P0             | None         | Approved title, audience, and positioning             |
 |    10 | Refresh the social preview                  | P0             | None         | Approved enterprise-editorial direction               |
 |    11 | Align deployment with the production branch | P2             | None         | Automatic deployment after required checks            |
@@ -279,6 +279,7 @@ chronology without losing access to the complete resume narrative.
 
 ## 8. Reduce and Differentiate Content
 
+**Status:** Done (1 September 2026)  
 **Roadmap priority:** P1  
 **Intervention required:** None; substantial rewriting is approved  
 **Goal:** Improve scanning and give each section a distinct purpose.
