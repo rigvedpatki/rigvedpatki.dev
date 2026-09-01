@@ -1,5 +1,6 @@
 ---
 import EducationIcon from '../assets/icons/solid/education.svg';
+import { education, institutions } from '../data/education';
 ---
 
 <section
@@ -15,109 +16,43 @@ import EducationIcon from '../assets/icons/solid/education.svg';
       Education
     </h2>
     <div class="flex flex-col gap-y-4">
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-3"
-      >
-        <div class="flex flex-col gap-y-1.5">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">
-              Bachelor of Technology (B.Tech) in Information Technology
-            </h3>
-            <p class="text-base-content/70">
-              Vishwakarma Institute of Technology, Pune
-            </p>
-            <p class="text-base-content/70">Aug 2009 - May 2013</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="text-base-content/70">
-              Graduated with a CGPA of 7.56 out of 10
-            </p>
-            <p class="text-base-content/70">Academic Projects:</p>
-            <ul class="ml-4 list-disc text-base-content/70">
-              <li>
-                IP Address Calculation for Class-full and CIDR IP addressing
-              </li>
-              <li>Using KNN algorithm in Data minning for a given data set</li>
-              <li>
-                LogMon - An application for collecting , searching and analyzing
-                log files of all computers in a local area network
-              </li>
-            </ul>
-          </div>
-        </div>
-      </article>
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-3"
-      >
-        <div class="flex flex-col gap-y-1.5">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">
-              Master of Science (M.Sc.) in ICT Innovation: Cloud Computing and
-              Services
-            </h3>
-            <p class="text-base-content/70">Technische Universität Berlin</p>
-            <p class="text-base-content/70">Sep 2015 - Apr 2016</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="text-base-content/70">
-              In association with EIT Digital Master School
-            </p>
-            <p class="text-base-content/70">Academic Projects:</p>
-            <ul class="ml-4 list-disc text-base-content/70">
-              <li>Cloud based Employee Reimbursement Application</li>
-              <li>
-                JogAir - Application for collecting and displaying pollution
-                data of Germany.
-              </li>
-              <li>
-                Internet Service Lab - Graphical HATEOAS Representation for REST
-                API Development.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </article>
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-3"
-      >
-        <div class="flex flex-col gap-y-1.5">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">Summer School EIT Digital</h3>
-            <p class="text-base-content/70">Aalto University, Finland</p>
-            <p class="text-base-content/70">Jun 2016</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="text-base-content/70">
-              In association with EIT Digital Master School
-            </p>
-          </div>
-        </div>
-      </article>
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-3"
-      >
-        <div class="flex flex-col gap-y-1.5">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">
-              Master of Science (M.Sc.) in ICT Innovation: Cloud Computing and
-              Services
-            </h3>
-            <p class="text-base-content/70">
-              KTH Royal Institute of Technology, Stockholm
-            </p>
-            <p class="text-base-content/70">Aug 2016 - May 2018</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="text-base-content/70">
-              In association with EIT Digital Master School
-            </p>
-            <p class="text-base-content/70">Academic Projects:</p>
-            <ul class="ml-4 list-disc text-base-content/70">
-              <li>Swedish Event Management System</li>
-            </ul>
-          </div>
-        </div>
-      </article>
+      {
+        education.map(record => {
+          const institution = institutions[record.institutionId];
+          const institutionLabel = institution.location
+            ? `${institution.name}, ${institution.location}`
+            : institution.name;
+
+          return (
+            <article class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-3">
+              <div class="flex flex-col gap-y-1.5">
+                <div class="flex flex-col gap-y-0.5">
+                  <h3 class="text-lg font-medium">{record.title}</h3>
+                  <p class="text-base-content/70">{institutionLabel}</p>
+                  <p class="text-base-content/70">{record.period.label}</p>
+                </div>
+                {(record.detail || record.projects) && (
+                  <div class="flex flex-col gap-y-1.5">
+                    {record.detail && (
+                      <p class="text-base-content/70">{record.detail}</p>
+                    )}
+                    {record.projects && (
+                      <>
+                        <p class="text-base-content/70">Academic Projects:</p>
+                        <ul class="ml-4 list-disc text-base-content/70">
+                          {record.projects.map(project => (
+                            <li>{project}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </div>
+                )}
+              </div>
+            </article>
+          );
+        })
+      }
     </div>
   </div>
 </section>

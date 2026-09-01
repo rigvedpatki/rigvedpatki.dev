@@ -23,23 +23,23 @@ not replace the P0-P2 business priorities in the audit.
 
 ## Implementation Order
 
-| Order | Roadmap item                                | Audit priority | Intervention | Main dependency                                       |
-| ----: | ------------------------------------------- | -------------- | ------------ | ----------------------------------------------------- |
-|     1 | Add a custom 404 page (Done)                | P2             | None         | None                                                  |
-|     2 | Add sticky section navigation (Done)        | P1             | None         | None                                                  |
-|     3 | Correct and validate structured data (Done) | P0             | None         | Visible resume and education content                  |
-|     4 | Add automated quality checks (Done)         | P2             | None         | CI/tooling choices can follow repository conventions  |
-|     5 | Establish Lighthouse budgets (Done)         | P2             | None         | Baseline measurement after item 4                     |
-|     6 | Move repeated content into structured data  | Later          | None         | Preferably after content changes stabilize            |
-|     7 | Feature projects before full history        | P1             | None         | Approved featured-project set                         |
-|     8 | Reduce and differentiate content (Done)     | P1             | None         | Preserve verified facts and personal tone             |
-|     9 | Sharpen the hero positioning (Done)         | P0             | None         | Approved title, audience, and positioning             |
-|    10 | Refresh the social preview (Done)           | P0             | None         | Production preview validation remains                 |
-|    11 | Align deployment with the production branch | P2             | None         | Automatic deployment after required checks            |
-|    12 | Refine privacy-aware analytics              | Later          | None         | Approved goals, provider, retention, and audience     |
-|    13 | Add credential links and classification     | P1             | None         | Retain and classify all five entries                  |
-|    14 | Review profile imagery                      | P1             | None         | Retain and optimize the current illustration          |
-|    15 | Publish three featured case studies         | P0             | Review       | Verify published metrics and final publication safety |
+| Order | Roadmap item                                      | Audit priority | Intervention | Main dependency                                       |
+| ----: | ------------------------------------------------- | -------------- | ------------ | ----------------------------------------------------- |
+|     1 | Add a custom 404 page (Done)                      | P2             | None         | None                                                  |
+|     2 | Add sticky section navigation (Done)              | P1             | None         | None                                                  |
+|     3 | Correct and validate structured data (Done)       | P0             | None         | Visible resume and education content                  |
+|     4 | Add automated quality checks (Done)               | P2             | None         | CI/tooling choices can follow repository conventions  |
+|     5 | Establish Lighthouse budgets (Done)               | P2             | None         | Baseline measurement after item 4                     |
+|     6 | Move repeated content into structured data (Done) | Later          | None         | Content changes stabilized                            |
+|     7 | Feature projects before full history              | P1             | None         | Approved featured-project set                         |
+|     8 | Reduce and differentiate content (Done)           | P1             | None         | Preserve verified facts and personal tone             |
+|     9 | Sharpen the hero positioning (Done)               | P0             | None         | Approved title, audience, and positioning             |
+|    10 | Refresh the social preview (Done)                 | P0             | None         | Production preview validation remains                 |
+|    11 | Align deployment with the production branch       | P2             | None         | Automatic deployment after required checks            |
+|    12 | Refine privacy-aware analytics                    | Later          | None         | Approved goals, provider, retention, and audience     |
+|    13 | Add credential links and classification           | P1             | None         | Retain and classify all five entries                  |
+|    14 | Review profile imagery                            | P1             | None         | Retain and optimize the current illustration          |
+|    15 | Publish three featured case studies               | P0             | Review       | Verify published metrics and final publication safety |
 
 ## 1. Add a Custom 404 Page
 
@@ -218,6 +218,7 @@ are blocked.
 
 ## 6. Move Repeated Content Into Structured Data
 
+**Status:** Done (1 September 2026)  
 **Roadmap priority:** Later  
 **Intervention required:** None after copy is approved  
 **Goal:** Remove manual duplication and make portfolio content easier

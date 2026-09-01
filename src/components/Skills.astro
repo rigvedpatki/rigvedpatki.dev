@@ -1,28 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import SkillsIcon from '../assets/icons/solid/skills.svg';
-import javascript from '../assets/icons/skills/javascript.svg';
-import typescript from '../assets/icons/skills/typescript.svg';
-import go from '../assets/icons/skills/go.svg';
-import python from '../assets/icons/skills/python.svg';
-import java from '../assets/icons/skills/java.svg';
-import angular from '../assets/icons/skills/angular.svg';
-import vue from '../assets/icons/skills/vue.svg';
-import react from '../assets/icons/skills/react.svg';
-import solidJs from '../assets/icons/skills/solid-js.svg';
-import astro from '../assets/icons/skills/astro.svg';
-import nodeJs from '../assets/icons/skills/node-js.svg';
-import expressJs from '../assets/icons/skills/express-js.svg';
-import nestJs from '../assets/icons/skills/nest-js.svg';
-import springBoot from '../assets/icons/skills/spring-boot.svg';
-import fiber from '../assets/icons/skills/fiber.svg';
-import docker from '../assets/icons/skills/docker.svg';
-import kubernetes from '../assets/icons/skills/kubernetes.svg';
-import aws from '../assets/icons/skills/aws.svg';
-import gcp from '../assets/icons/skills/gcp.svg';
-import mysql from '../assets/icons/skills/mysql.svg';
-import mongo from '../assets/icons/skills/mongo.svg';
-import chi from '../assets/icons/skills/chi.svg';
+import { skillCategories } from '../data/skills';
 ---
 
 <section id="skills" class="card bg-base-100 border border-base-300 shadow-sm">
@@ -35,359 +14,38 @@ import chi from '../assets/icons/skills/chi.svg';
       Skills
     </h2>
     <div class="flex flex-col gap-y-6">
-      <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
-        <h3 class="w-1/5 font-medium text-base">Languages</h3>
-        <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={javascript}
-              alt="JavaScript"
-              width={20}
-              height={20}
-              class="h-5 w-5 shrink-0"
-              loading="lazy"
-              fetchpriority="high"
-              decoding="async"
-            />
-            <p>JavaScript</p>
+      {
+        skillCategories.map(category => (
+          <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
+            <h3 class="w-1/5 font-medium text-base">{category.name}</h3>
+            <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
+              {category.skills.map(skill => {
+                const iconSize = skill.iconSize ?? 24;
+
+                return (
+                  <div class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default">
+                    <Image
+                      src={skill.icon}
+                      alt={skill.name}
+                      width={iconSize}
+                      height={iconSize}
+                      class={
+                        iconSize === 20
+                          ? 'h-5 w-5 shrink-0'
+                          : 'h-6 w-6 shrink-0'
+                      }
+                      loading="lazy"
+                      fetchpriority={skill.fetchPriority}
+                      decoding="async"
+                    />
+                    <p>{skill.name}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={typescript}
-              alt="TypeScript"
-              width={20}
-              height={20}
-              class="h-5 w-5 shrink-0"
-              loading="lazy"
-              fetchpriority="high"
-              decoding="async"
-            />
-            <p>TypeScript</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={go}
-              alt="Go"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="high"
-              decoding="async"
-            />
-            <p>Go</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={python}
-              alt="Python"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              decoding="async"
-            />
-            <p>Python</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={java}
-              alt="Java"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              decoding="async"
-            />
-            <p>Java</p>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
-        <h3 class="w-1/5 font-medium text-base">Frontend</h3>
-        <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={angular}
-              alt="Angular"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Angular</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={vue}
-              alt="Vue.js"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Vue.js</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={react}
-              alt="React"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>React</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={solidJs}
-              alt="Solid.js"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Solid.js</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={astro}
-              alt="Astro"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Astro</p>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
-        <h3 class="w-1/5 font-medium text-base">Backend</h3>
-        <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={nodeJs}
-              alt="Node.js"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Node.js</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={expressJs}
-              alt="Express.js"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Express.js</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={nestJs}
-              alt="Nest.js"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Nest.js</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={springBoot}
-              alt="Spring Boot"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Java / Spring Boot</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={fiber}
-              alt="Go Fiber"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Go / Fiber</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={chi}
-              alt="Go Chi"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Go / Chi</p>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
-        <h3 class="w-1/5 font-medium text-base">Cloud & DevOps</h3>
-        <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={docker}
-              alt="Docker"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Docker</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={kubernetes}
-              alt="Kubernetes"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>Kubernetes</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={aws}
-              alt="AWS"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>AWS</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={gcp}
-              alt="GCP"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>GCP</p>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0">
-        <h3 class="w-1/5 font-medium text-base">Databases</h3>
-        <div class="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={mysql}
-              alt="MySQL"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>MySQL</p>
-          </div>
-          <div
-            class="badge badge-lg gap-2 bg-base-200 text-base-content border-base-300 hover:bg-base-300 transition-all cursor-default"
-          >
-            <Image
-              src={mongo}
-              alt="MongoDB"
-              width={24}
-              height={24}
-              class="h-6 w-6 shrink-0"
-              loading="lazy"
-              fetchpriority="low"
-              decoding="async"
-            />
-            <p>MongoDB</p>
-          </div>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>

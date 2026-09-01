@@ -86,6 +86,40 @@ test('section links update the URL fragment', async ({ page }) => {
   await expect(page).toHaveURL(/#projects$/);
 });
 
+test('shared portfolio facts render consistently', async ({ page }) => {
+  await page.goto('/');
+
+  await expect(page.getByText('Cohesity Inc')).toBeVisible();
+  await expect(
+    page.locator('#experience').getByText('December 2024 - Present', {
+      exact: true
+    })
+  ).toBeVisible();
+  await expect(
+    page
+      .locator('#projects')
+      .getByText('December 2024 - Present | August 2020 - December 2024', {
+        exact: true
+      })
+  ).toBeVisible();
+  await expect(
+    page.getByText('Vishwakarma Institute of Technology, Pune')
+  ).toBeVisible();
+
+  const personSchema = JSON.parse(
+    (await page
+      .locator('script[type="application/ld+json"]')
+      .first()
+      .textContent()) ?? '{}'
+  );
+
+  expect(personSchema.worksFor.name).toBe('Cohesity Inc');
+  expect(personSchema.alumniOf).toContainEqual(
+    expect.objectContaining({ name: 'Vishwakarma Institute of Technology' })
+  );
+  expect(personSchema.knowsAbout).toContain('TypeScript');
+});
+
 test('theme control changes and persists the selected theme', async ({
   page
 }) => {

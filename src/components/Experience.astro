@@ -1,5 +1,6 @@
 ---
 import ExperienceIcon from '../assets/icons/solid/experience.svg';
+import { organizations, roles } from '../data/portfolio';
 ---
 
 <section
@@ -15,193 +16,33 @@ import ExperienceIcon from '../assets/icons/solid/experience.svg';
       Experience
     </h2>
     <div class="flex flex-col gap-y-4">
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-4"
-      >
-        <div class="flex flex-col gap-y-2">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">Cohesity, Pune</h3>
-            <p class="text-base-content/70">Member of Technical Staff III</p>
-            <p class="text-base-content/70">December 2024 - Present</p>
-          </div>
-          <p class="text-sm text-base-content/80 leading-relaxed">
-            Leads full-stack product initiatives and team delivery for
-            Cohesity's data management platform following its acquisition of
-            Veritas Technologies.
-          </p>
-          <ul class="ml-4 list-disc text-sm text-base-content/70 space-y-1">
-            <li>
-              Guides a cross-functional Scrum team of 7 developers through
-              planning and delivery
-            </li>
-            <li>
-              Architects scalable full-stack features and drives technical
-              decisions for enterprise customers
-            </li>
-            <li>
-              Mentors engineers while maintaining continuity across the product
-              and organizational transition
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-4"
-      >
-        <div class="flex flex-col gap-y-2">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">Veritas Technologies LLC, Pune</h3>
-            <p class="text-base-content/70">Senior Software Engineer</p>
-            <p class="text-base-content/70">August 2020 - December 2024</p>
-          </div>
-          <p class="text-sm text-base-content/80 leading-relaxed">
-            Progressed from product delivery into frontend architecture, Scrum
-            leadership, and mentorship for Veritas Appliance products.
-          </p>
-          <ul class="ml-4 list-disc text-sm text-base-content/70 space-y-1">
-            <li>
-              Led a Scrum team of 7 developers for 2 years, maintaining a 95%+
-              sprint completion rate
-            </li>
-            <li>
-              Architected and developed the Angular 12 NetInsights dashboard,
-              providing real-time appliance monitoring to thousands of
-              enterprise customers
-            </li>
-            <li>
-              Mentored 4 junior developers through reviews, pairing, and
-              architectural discussions; each progressed to a mid-level role
-            </li>
-            <li>
-              Designed and delivered a customer-facing application end to end,
-              from UX mockups and frontend implementation to backend APIs
-            </li>
-            <li>
-              Improved dashboard load times by 40% through code splitting, lazy
-              loading, and more efficient state management
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-4"
-      >
-        <div class="flex flex-col gap-y-2">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">Ecozen Solutions, Pune</h3>
-            <p class="text-base-content/70">Full Stack Web Developer</p>
-            <p class="text-base-content/70">September 2019 - August 2020</p>
-          </div>
-          <p class="text-sm text-base-content/80 leading-relaxed">
-            Owned full-stack delivery of an agricultural IoT monitoring and
-            control platform across multiple farms.
-          </p>
-          <ul class="ml-4 list-disc text-sm text-base-content/70 space-y-1">
-            <li>
-              Built a Vue.js dashboard with live visualizations for 100+ IoT
-              devices
-            </li>
-            <li>
-              Designed Node.js and TypeScript APIs handling 10,000+ daily
-              requests with 99.9% uptime
-            </li>
-            <li>
-              Built an MQTT and MongoDB data pipeline to ingest, validate, and
-              store time-series sensor data
-            </li>
-            <li>
-              Reduced response time to critical device issues by 60% with
-              scheduled monitoring and email alerts
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-4"
-      >
-        <div class="flex flex-col gap-y-2">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">Advinans, Stockholm, Sweden</h3>
-            <p class="text-base-content/70">Backend Developer</p>
-            <p class="text-base-content/70">September 2018 - August 2019</p>
-          </div>
-          <p class="text-sm text-base-content/80 leading-relaxed">
-            Automated container deployment workflows on Google Cloud Platform.
-          </p>
-          <ul class="ml-4 list-disc text-sm text-base-content/70 space-y-1">
-            <li>
-              Reduced deployment time from 30 minutes to 2 minutes with a Slack
-              bot for Docker and Kubernetes releases
-            </li>
-            <li>
-              Implemented authentication, validation, and orchestration in
-              TypeScript with Google Cloud Functions
-            </li>
-            <li>
-              Integrated with Google Kubernetes Engine APIs for zero-downtime
-              deployments
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-4"
-      >
-        <div class="flex flex-col gap-y-2">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">
-              TallBird Employment Innovations, Pune
-            </h3>
-            <p class="text-base-content/70">Full Stack Developer</p>
-            <p class="text-base-content/70">January 2018 - August 2018</p>
-          </div>
-          <p class="text-sm text-base-content/80 leading-relaxed">
-            Delivered progressive web and serverless products for an early-stage
-            HR technology company.
-          </p>
-          <ul class="ml-4 list-disc text-sm text-base-content/70 space-y-1">
-            <li>
-              Built a React progressive web app with offline support and push
-              notifications, achieving a 90+ Lighthouse score
-            </li>
-            <li>
-              Architected a Firebase backend using Cloud Functions and Cloud
-              Firestore for business logic and real-time synchronization
-            </li>
-            <li>
-              Shipped responsive, accessible interfaces through rapid iteration
-              on user feedback and business requirements
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article
-        class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-4"
-      >
-        <div class="flex flex-col gap-y-2">
-          <div class="flex flex-col gap-y-0.5">
-            <h3 class="text-lg font-medium">Accenture, Mumbai</h3>
-            <p class="text-base-content/70">Associate Software Engineer</p>
-            <p class="text-base-content/70">October 2013 - September 2015</p>
-          </div>
-          <p class="text-sm text-base-content/80 leading-relaxed">
-            Developed and supported SAP ABAP systems for enterprise clients.
-          </p>
-          <ul class="ml-4 list-disc text-sm text-base-content/70 space-y-1">
-            <li>
-              Built and maintained programs supporting core business processes
-            </li>
-            <li>
-              Resolved production incidents and optimized SAP batch jobs for
-              processing efficiency
-            </li>
-            <li>
-              Translated business requirements into technical specifications
-              with functional consultants
-            </li>
-          </ul>
-        </div>
-      </article>
+      {
+        roles.map(role => {
+          const organization = organizations[role.organizationId];
+
+          return (
+            <article class="relative rounded-2xl border border-base-300 bg-base-200 px-5 py-4">
+              <div class="flex flex-col gap-y-2">
+                <div class="flex flex-col gap-y-0.5">
+                  <h3 class="text-lg font-medium">
+                    {organization.name}, {organization.location}
+                  </h3>
+                  <p class="text-base-content/70">{role.title}</p>
+                  <p class="text-base-content/70">{role.period.label}</p>
+                </div>
+                <p class="text-sm text-base-content/80 leading-relaxed">
+                  {role.summary}
+                </p>
+                <ul class="ml-4 list-disc text-sm text-base-content/70 space-y-1">
+                  {role.outcomes.map(outcome => (
+                    <li>{outcome}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          );
+        })
+      }
     </div>
   </div>
 </section>

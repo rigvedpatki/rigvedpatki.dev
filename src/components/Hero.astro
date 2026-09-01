@@ -7,6 +7,7 @@ import PlaceIcon from '../assets/icons/solid/place.svg';
 import LinkedInIcon from '../assets/icons/solid/likedin.svg';
 import GitHubIcon from '../assets/icons/solid/github.svg';
 import MailIcon from '../assets/icons/solid/mail.svg';
+import { organizations } from '../data/portfolio';
 ---
 
 <section class="flex flex-col items-center gap-y-7">
@@ -39,7 +40,7 @@ import MailIcon from '../assets/icons/solid/mail.svg';
           class="h-5 w-5 shrink-0 fill-primary"
           aria-label="Work icon"
         />
-        <p>Cohesity Inc</p>
+        <p>{organizations.cohesity.legalName}</p>
       </div>
       <div class="flex flex-row items-center justify-center gap-x-2">
         <PlaceIcon

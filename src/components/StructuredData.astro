@@ -1,9 +1,19 @@
 ---
 import ghibliProfile from '../assets/images/ghibli-profile.webp';
+import { institutions, type InstitutionId } from '../data/education';
+import { organizations } from '../data/portfolio';
+import { skillTopics } from '../data/skills';
 
 const siteUrl = Astro.site || 'https://rigvedpatki.dev';
 const personId = new URL('/#person', siteUrl).toString();
 const profileImageUrl = new URL(ghibliProfile.src, siteUrl).toString();
+const alumniInstitutionIds: InstitutionId[] = [
+  'vit',
+  'eit-digital',
+  'tu-berlin',
+  'kth',
+  'aalto'
+];
 
 // Person Schema
 const personSchema = {
@@ -22,51 +32,18 @@ const personSchema = {
   ],
   knowsAbout: [
     'Full Stack Development',
-    'Angular',
-    'React',
-    'Vue.js',
-    'Node.js',
-    'NestJS',
-    'Java',
-    'Spring Boot',
-    'Go',
-    'TypeScript',
-    'JavaScript',
-    'AWS',
-    'GCP',
-    'Docker',
-    'Kubernetes',
-    'MongoDB',
-    'MySQL',
+    ...skillTopics,
     'Software Architecture',
     'Scrum Master'
   ],
   worksFor: {
     '@type': 'Organization',
-    name: 'Cohesity Inc'
+    name: organizations.cohesity.legalName
   },
-  alumniOf: [
-    {
-      '@type': 'EducationalOrganization',
-      name: 'Vishwakarma Institute of Technology'
-    },
-    {
-      '@type': 'EducationalOrganization',
-      name: 'EIT Digital Master School'
-    },
-    {
-      '@type': 'CollegeOrUniversity',
-      name: 'Technische Universität Berlin'
-    },
-    {
-      '@type': 'CollegeOrUniversity',
-      name: 'KTH Royal Institute of Technology'
-    },
-    {
-      '@type': 'CollegeOrUniversity',
-      name: 'Aalto University'
-    }
-  ],
+  alumniOf: alumniInstitutionIds.map(institutionId => ({
+    '@type': institutions[institutionId].schemaType,
+    name: institutions[institutionId].name
+  })),
   hasCredential: [
     {
       '@type': 'EducationalOccupationalCredential',
@@ -75,15 +52,15 @@ const personSchema = {
       recognizedBy: [
         {
           '@type': 'EducationalOrganization',
-          name: 'EIT Digital Master School'
+          name: institutions['eit-digital'].name
         },
         {
           '@type': 'CollegeOrUniversity',
-          name: 'Technische Universität Berlin'
+          name: institutions['tu-berlin'].name
         },
         {
           '@type': 'CollegeOrUniversity',
-          name: 'KTH Royal Institute of Technology'
+          name: institutions.kth.name
         }
       ]
     },
@@ -93,7 +70,7 @@ const personSchema = {
       credentialCategory: "Bachelor's degree",
       recognizedBy: {
         '@type': 'EducationalOrganization',
-        name: 'Vishwakarma Institute of Technology'
+        name: institutions.vit.name
       }
     }
   ]
