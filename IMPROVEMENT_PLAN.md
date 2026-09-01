@@ -33,8 +33,8 @@ not replace the P0-P2 business priorities in the audit.
 |     6 | Move repeated content into structured data  | Later          | None         | Preferably after content changes stabilize            |
 |     7 | Feature projects before full history        | P1             | None         | Approved featured-project set                         |
 |     8 | Reduce and differentiate content (Done)     | P1             | None         | Preserve verified facts and personal tone             |
-|     9 | Sharpen the hero positioning                | P0             | None         | Approved title, audience, and positioning             |
-|    10 | Refresh the social preview                  | P0             | None         | Approved enterprise-editorial direction               |
+|     9 | Sharpen the hero positioning (Done)         | P0             | None         | Approved title, audience, and positioning             |
+|    10 | Refresh the social preview (Done)           | P0             | None         | Production preview validation remains                 |
 |    11 | Align deployment with the production branch | P2             | None         | Automatic deployment after required checks            |
 |    12 | Refine privacy-aware analytics              | Later          | None         | Approved goals, provider, retention, and audience     |
 |    13 | Add credential links and classification     | P1             | None         | Retain and classify all five entries                  |
@@ -279,7 +279,8 @@ chronology without losing access to the complete resume narrative.
 
 ## 8. Reduce and Differentiate Content
 
-**Status:** Done (1 September 2026)  
+**Status:** Implemented (1 September 2026); production preview
+validation pending  
 **Roadmap priority:** P1  
 **Intervention required:** None; substantial rewriting is approved  
 **Goal:** Improve scanning and give each section a distinct purpose.
@@ -315,6 +316,7 @@ claim is needlessly repeated.
 
 ## 9. Sharpen the Hero Positioning
 
+**Status:** Done (1 September 2026)  
 **Roadmap priority:** P0  
 **Intervention required:** None; title, audience, and positioning are
 approved  
@@ -365,6 +367,7 @@ positioning after a brief glance.
 
 ## 10. Refresh the Social Preview
 
+**Status:** Done (1 September 2026)  
 **Roadmap priority:** P0  
 **Intervention required:** None; visual direction is approved  
 **Goal:** Make shared links recognizable, current, and aligned with

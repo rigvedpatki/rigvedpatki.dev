@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "generate:og": "node scripts/generate-og-image.mjs",
     "deploy": "astro build && gh-pages -d dist",
     "lint": "eslint . --ext .js,.mjs,.cjs,.ts,.tsx,.astro",
     "lint:fix": "eslint . --ext .js,.mjs,.cjs,.ts,.tsx,.astro --fix",

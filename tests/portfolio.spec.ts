@@ -22,6 +22,30 @@ test('home page exposes its primary navigation and actions', async ({
     'content',
     /Senior Full-Stack Engineer with 9\+ years/
   );
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+    'content',
+    'summary_large_image'
+  );
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    'content',
+    'https://rigvedpatki.dev/og-image.png'
+  );
+  await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute(
+    'content',
+    '1200'
+  );
+  await expect(
+    page.locator('meta[property="og:image:height"]')
+  ).toHaveAttribute('content', '630');
+  await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute(
+    'content',
+    /Rigved Patki, Senior Full-Stack Engineer/
+  );
+
+  const socialImageResponse = await page.request.get('/og-image.png');
+  expect(socialImageResponse.ok()).toBeTruthy();
+  expect(socialImageResponse.headers()['content-type']).toContain('image/png');
+
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Rigved Patki'
   );

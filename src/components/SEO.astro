@@ -3,6 +3,9 @@ const {
   title = 'Rigved Patki - Senior Full-Stack Engineer',
   description = 'Senior Full-Stack Engineer with 9+ years building reliable product experiences for enterprise cloud and data platforms. Specializing in frontend architecture, cloud-native systems, and technical leadership.',
   image = '/og-image.png',
+  imageAlt = 'Rigved Patki, Senior Full-Stack Engineer',
+  imageWidth = 1200,
+  imageHeight = 630,
   type = 'website',
   canonical,
   keywords = 'senior full-stack engineer, frontend architecture, cloud-native systems, technical leadership, Angular, React, Node.js, Java, Go, AWS, Kubernetes, Cohesity, portfolio',
@@ -37,6 +40,10 @@ const imageUrl = image.startsWith('http')
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageUrl} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content={imageWidth} />
+<meta property="og:image:height" content={imageHeight} />
+<meta property="og:image:alt" content={imageAlt} />
 <meta property="og:site_name" content="Rigved Patki - Portfolio" />
 
 <!-- Twitter -->
@@ -45,6 +52,7 @@ const imageUrl = image.startsWith('http')
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:image:alt" content={imageAlt} />
 
 <!-- Additional Meta Tags -->
 <meta name="theme-color" content="#ffffff" />
