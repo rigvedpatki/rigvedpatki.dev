@@ -16,8 +16,9 @@
     "typecheck": "astro check",
     "links": "linkinator dist --recurse --clean-urls --check-fragments --retry --retry-errors --retry-errors-count 2 --retry-errors-jitter 500 --timeout 15000",
     "test:browser": "playwright test",
+    "lighthouse": "lhci autorun",
     "check": "pnpm run lint && pnpm run format:check && pnpm run typecheck",
-    "quality": "pnpm run check && pnpm run build && pnpm run links && pnpm run test:browser"
+    "quality": "pnpm run check && pnpm run build && pnpm run links && pnpm run test:browser && pnpm run lighthouse"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -30,6 +31,7 @@
     "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.13.0",
     "@eslint/js": "^10.0.1",
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/vite": "^4.3.3",
     "daisyui": "^5.7.17",

@@ -7,6 +7,7 @@ dist/
 # browser test output
 playwright-report/
 test-results/
+.lighthouseci/
 
 # dependencies
 node_modules/

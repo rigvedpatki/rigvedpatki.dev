@@ -28,8 +28,8 @@ not replace the P0-P2 business priorities in the audit.
 |     1 | Add a custom 404 page (Done)                | P2             | None         | None                                                  |
 |     2 | Add sticky section navigation (Done)        | P1             | None         | None                                                  |
 |     3 | Correct and validate structured data (Done) | P0             | None         | Visible resume and education content                  |
-|     4 | Add automated quality checks                | P2             | None         | CI/tooling choices can follow repository conventions  |
-|     5 | Establish Lighthouse budgets                | P2             | None         | Baseline measurement after item 4                     |
+|     4 | Add automated quality checks (Done)         | P2             | None         | CI/tooling choices can follow repository conventions  |
+|     5 | Establish Lighthouse budgets (Done)         | P2             | None         | Baseline measurement after item 4                     |
 |     6 | Move repeated content into structured data  | Later          | None         | Preferably after content changes stabilize            |
 |     7 | Feature projects before full history        | P1             | None         | Approved featured-project set                         |
 |     8 | Reduce and differentiate content            | P1             | None         | Preserve verified facts and personal tone             |

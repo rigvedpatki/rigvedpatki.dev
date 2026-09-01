@@ -55,13 +55,18 @@ jump into our [Discord server](https://astro.build/chat).
 
 Run `pnpm quality` to execute linting, formatting validation, Astro
 type checking, a production build, recursive link checks, and
-Playwright browser and accessibility smoke tests. Before the first
-local browser run, install Chromium with
+Playwright browser and accessibility smoke tests, followed by three
+Lighthouse CI runs against the built preview. Before the first local
+browser or Lighthouse run, install Chromium with
 `pnpm exec playwright install chromium`.
 
 Individual checks are available through `pnpm lint`,
 `pnpm format:check`, `pnpm typecheck`, `pnpm links`, and
-`pnpm test:browser`.
+`pnpm test:browser`. After `pnpm build`, run `pnpm lighthouse` to
+check the performance, accessibility, best-practices, SEO, LCP, CLS,
+and 100 KB transferred JavaScript budgets. Reports are written to
+`.lighthouseci/` locally and retained as workflow artifacts for 14
+days.
 
 ## Deployment
 

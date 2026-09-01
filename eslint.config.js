@@ -61,6 +61,15 @@ export default [
     }
   },
   {
+    // Lighthouse CI discovers this configuration as CommonJS
+    files: ['lighthouserc.cjs'],
+    languageOptions: {
+      globals: {
+        module: 'readonly'
+      }
+    }
+  },
+  {
     // Ignore patterns
     ignores: [
       // Dependencies
